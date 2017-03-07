@@ -4,7 +4,7 @@ import java.util.*;
 import llm.lab7.Directory;
 import llm.lab7.Employee;
 
-public class MainDirectory implements llm.lab7.Directory{
+public class MainDirectory implements Directory{
 	private ArrayList<Employee> list = new ArrayList<Employee>();
 	
 	public void add(Employee e){
