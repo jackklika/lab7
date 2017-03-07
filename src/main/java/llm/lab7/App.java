@@ -13,6 +13,13 @@ public class App
     	boolean powerOn = true;
     	Scanner scan = new Scanner(System.in);
     	String cmd;
+    	System.out.println(
+    			"-LADY LIGHTNING MONKEYS INC BANK THING!-" + 
+    			"POWER: Toggles power of machine\n" +
+    			"CLR: Clears database\n" +
+    			"ADD: Adds records\n" +
+    			"PRINT: Prints out a full directory"
+    	);
     	
     	while(powerOn){
     		System.out.print("CMD> ");
@@ -23,10 +30,14 @@ public class App
     			powerOn = false;
     		}
     		else if (cmd.equals("ADD")){
-    			// jump into another loop, break with 'end'
+    			
+    			System.out.println("Please enter records in the following format:");
+    			System.out.println("Matt Powers CAFE 1921680112");
+    			System.out.println("Type 'END' when done.");
+    			
     			String subCmd;
     			while (true){
-    				subCmd = scan.next().toUpperCase();
+    				subCmd = scan.nextLine().toUpperCase();
     				
     				if (subCmd.equals("END")){
     					break; // get out of this while loop!
