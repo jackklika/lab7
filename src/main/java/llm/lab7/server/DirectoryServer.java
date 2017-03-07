@@ -1,4 +1,4 @@
-package llm.lab7;
+package llm.lab7.server;
 
 public class DirectoryServer {
 
