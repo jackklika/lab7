@@ -19,7 +19,9 @@ private ArrayList<Employee> list = new ArrayList<Employee>();
 
 	public void print() {
 		// TODO Auto-generated method stub
-		String stdout = ;
+		for (Employee tmp: list) {
+	        System.out.println(tmp);
+	    }
 	}
 
 	public void clear() {
