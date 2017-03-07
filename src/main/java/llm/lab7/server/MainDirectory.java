@@ -30,6 +30,6 @@ public class MainDirectory implements Directory{
 		Gson gson = new Gson();
 		Type collectionType = new TypeToken<Collection<String>>(){}.getType();
 		Collection<String> Employees2 = gson.fromJson(json, collectionType);
-		
+		 
 	}
 }
