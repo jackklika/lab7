@@ -27,6 +27,16 @@ public class App
     			String subCmd;
     			while (true){
     				subCmd = scan.next().toUpperCase();
+    				
+    				if (subCmd.equals("END")){
+    					break; // get out of this while loop!
+    				}
+    				else {
+    					
+    					// PARSE INPUT
+    					
+    				}
+    				
     			}
     			
     		}
