@@ -19,11 +19,12 @@ private ArrayList<Employee> list = new ArrayList<Employee>();
 
 	public void print() {
 		// TODO Auto-generated method stub
-		
+		String stdout = ;
 	}
 
 	public void clear() {
 		// TODO Auto-generated method stub
+		list.clear();
 		
 	}
 
