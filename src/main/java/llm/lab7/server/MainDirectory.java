@@ -7,10 +7,6 @@ import llm.lab7.Employee;
 public class MainDirectory implements Directory{
 	private ArrayList<Employee> list = new ArrayList<Employee>();
 	
-	public void add(Employee e){
-		
-	}
-	
 	public void add(Collection<Employee> e){
 		
 	}
@@ -20,6 +16,10 @@ public class MainDirectory implements Directory{
 	}
 	
 	public void clear(){
+		
+	}
+	
+	public void JSONSerialIn(){
 		
 	}
 }
