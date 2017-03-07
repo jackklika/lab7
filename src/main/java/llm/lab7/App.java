@@ -24,15 +24,17 @@ public class App
     		}
     		else if (cmd.equals("ADD")){
     			// jump into another loop, break with 'end'
-    		
-    			
+    			String subCmd;
+    			while (true){
+    				subCmd = scan.next().toUpperCase();
+    			}
     			
     		}
     		else if (cmd.equals("CLR")){
-    			// Clear?
+    			// Clear the directory 
     		}
     		else if (cmd.equals("PRINT")){
-    			// Print
+    			// Print out the full directory employing toString implimented for Employee and Directory classes
     		}
     		else {
     			System.out.println("[INVALID COMMAND] Type POWER to quit.");
