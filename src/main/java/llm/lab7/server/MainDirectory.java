@@ -14,7 +14,7 @@ public class MainDirectory implements Directory{
 	private ArrayList<Employee> list = new ArrayList<Employee>();
 	
 	public void add(Collection<Employee> e){
-		
+		this.list.addAll(e);
 	}
 	
 	public void print(){
@@ -26,10 +26,11 @@ public class MainDirectory implements Directory{
 	}
 	
 	
+	@SuppressWarnings("unchecked")
 	public void receive(String json){
 		Gson gson = new Gson();
-		Type collectionType = new TypeToken<Collection<String>>(){}.getType();
-		Collection<String> Employees2 = gson.fromJson(json, collectionType);
+		Type collectionType = new TypeToken<Collection<Employee>>(){}.getType();
+		this.add((Collection<Employee>) gson.fromJson(json, collectionType));
 		 
 	}
 }
