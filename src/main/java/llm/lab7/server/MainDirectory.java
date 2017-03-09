@@ -18,11 +18,13 @@ public class MainDirectory implements Directory{
 	}
 	
 	public void print(){
-		
+		for(Employee e: list){
+			System.out.println(e);
+		}
 	}
 	
 	public void clear(){
-		
+		list.clear();
 	}
 	
 	
