@@ -18,7 +18,6 @@ private DirectoryServer ds = new DirectoryServer();
 	}
 
 	public void add(Collection<Employee> e) {
-		// TODO Auto-generated method stub
 		if(!list.contains(e)){
 			list.addAll(e);
 		}
@@ -32,16 +31,13 @@ private DirectoryServer ds = new DirectoryServer();
 	
 
 	public void print() {
-		// TODO Auto-generated method stub
 		for (Employee tmp: list) {
 	        System.out.println(tmp);
 	    }
 	}
 
 	public void clear() {
-		// TODO Auto-generated method stub
 		list.clear();
-		
 	}
 	
 	

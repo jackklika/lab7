@@ -50,20 +50,20 @@ public class App
     			while (true){
     				
     				subCmd = scan.nextLine().toUpperCase();
+					String[] in = subCmd.split(" ");
     				
     				if (subCmd.equals("END")){
     					break; // get out of this while loop!
-    				}
-    				else {
-    					// Expect 'fname lname department phone'
+    				} else if (in.length == 4) {
     					try {
-							String[] in = subCmd.split(" ");
-							
 							col.add(new Employee(in[0], in[1], in[2], Integer.parseInt(in[3])));
 							
     					} catch (Exception ex){
+    						ex.printStackTrace();
     						System.out.println("Something went wrong. Try entering the entry again.");
     					}
+    				} else {
+    					System.out.println("Something went wrong. Try entering the entry again.");
     				}
     				
     			}

@@ -19,7 +19,7 @@ public class MainDirectory implements Directory{
 	
 	public void print(){
 		for(Employee e: list){
-			System.out.println(e);
+			System.out.printf("%s, %s %s %s\n", e.lastName, e.firstName, e.department, e.phone);
 		}
 	}
 	

@@ -3,10 +3,10 @@ package llm.lab7;
 import java.util.Comparator;
 
 public class Employee {
-	String firstName;
-	String lastName;
-	String department;
-	Integer phone;
+	public String firstName;
+	public String lastName;
+	public String department;
+	public Integer phone;
 
 	Employee(String firstName, String lastName, String department, Integer phone) {
 		this.firstName = firstName;
