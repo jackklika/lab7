@@ -1,6 +1,9 @@
 package llm.lab7;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import llm.lab7.client.*;
 
 /**
  * Hello world!
@@ -13,12 +16,16 @@ public class App
     	boolean powerOn = true;
     	Scanner scan = new Scanner(System.in);
     	String cmd;
+    	DirectoryProxy dp = new DirectoryProxy();
+    	
+    	
+    	
     	System.out.println(
     			"-LADY LIGHTNING MONKEYS INC BANK THING!-" + 
-    			"POWER: Toggles power of machine\n" +
-    			"CLR: Clears database\n" +
-    			"ADD: Adds records\n" +
-    			"PRINT: Prints out a full directory"
+    			" POWER: Toggles power of machine\n" +
+    			" CLR: Clears database\n" +
+    			" ADD: Adds records\n" +
+    			" PRINT: Prints out a full directory"
     	);
     	
     	while(powerOn){
@@ -36,7 +43,9 @@ public class App
     			System.out.println("Type 'END' when done.");
     			
     			String subCmd;
+    			ArrayList<Employee> col = new ArrayList<Employee>();
     			while (true){
+    				
     				subCmd = scan.nextLine().toUpperCase();
     				
     				if (subCmd.equals("END")){
@@ -44,14 +53,22 @@ public class App
     				}
     				else {
     					// Expect 'fname lname department phone'
-    					
-    					String[] in = subCmd.split(" ");
-    					
-    					Employee e = new Employee(in[0], in[1], in[2], Integer.parseInt(in[3]));
-    					
+    					try {
+							String[] in = subCmd.split(" ");
+							
+							col.add(new Employee(in[0], in[1], in[2], Integer.parseInt(in[3])));
+							
+    					} catch (Exception ex){
+    						System.out.println("Something went wrong. Try entering the entry again.");
+    					}
     				}
     				
     			}
+    		
+    			// Send it to server, reconstruct directory on server with the resulting objects ordered by last name.
+    			
+    			dp.add(col); // send the collection to the directory proxy.
+    			
     			
     		}
     		else if (cmd.equals("CLR")){

@@ -29,5 +29,11 @@ private ArrayList<Employee> list = new ArrayList<Employee>();
 		list.clear();
 		
 	}
+	
+	
+	// Sends data to server directory
+	private class Transport {
+		
+	}
 
 }
