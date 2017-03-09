@@ -11,7 +11,11 @@ import llm.lab7.server.DirectoryServer;
 
 public class DirectoryProxy implements Directory{
 private ArrayList<Employee> list = new ArrayList<Employee>();
+private DirectoryServer ds = new DirectoryServer();
 
+	public DirectoryProxy(DirectoryServer d) {
+		this.ds = d;
+	}
 
 	public void add(Collection<Employee> e) {
 		// TODO Auto-generated method stub
@@ -42,8 +46,6 @@ private ArrayList<Employee> list = new ArrayList<Employee>();
 	
 	// Sends data to server directory
 	private static class Transport {
-		
-	DirectoryServer ds = new DirectoryServer();
 		
 		public static void send(String json){
 			
