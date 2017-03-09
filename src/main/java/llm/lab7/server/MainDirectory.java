@@ -35,4 +35,12 @@ public class MainDirectory implements Directory{
 		this.add((Collection<Employee>) gson.fromJson(json, collectionType));
 		 
 	}
+	
+	//See employee class for comparator
+	public void sort(){
+		Collections.sort(list, Employee.NameComparator);
+		
+	}
+	
+	
 }
