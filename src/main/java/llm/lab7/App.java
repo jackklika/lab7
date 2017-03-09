@@ -46,6 +46,7 @@ public class App
     			System.out.println("Type 'END' when done.");
     			
     			String subCmd;
+    			subCmd = scan.nextLine().toUpperCase();
     			ArrayList<Employee> col = new ArrayList<Employee>();
     			while (true){
     				
@@ -63,7 +64,7 @@ public class App
     						System.out.println("Something went wrong. Try entering the entry again.");
     					}
     				} else {
-    					System.out.println("Something went wrong. Try entering the entry again.");
+    					System.out.println("Your input was incorrectly formatted. Try again!");
     				}
     				
     			}

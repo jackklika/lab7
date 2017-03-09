@@ -25,8 +25,11 @@ private DirectoryServer ds = new DirectoryServer();
 		Gson gson = new Gson();
 		String json = gson.toJson(list);
 		System.out.println(json);
+		
 		Transport ts = new Transport();
 		ts.send(json);
+		
+		list.clear(); // Clears the list since the master list exists in the server
 	}
 	
 
