@@ -26,7 +26,8 @@ private DirectoryServer ds = new DirectoryServer();
 		Gson gson = new Gson();
 		String json = gson.toJson(list);
 		System.out.println(json);
-		Transport.send(json);
+		Transport ts = new Transport();
+		ts.send(json);
 	}
 	
 
@@ -45,10 +46,10 @@ private DirectoryServer ds = new DirectoryServer();
 	
 	
 	// Sends data to server directory
-	private static class Transport {
+	private class Transport {
 		
-		public static void send(String json){
-			
+		public void send(String json){
+			ds.md.receive(json);
 		}
 		
 	}

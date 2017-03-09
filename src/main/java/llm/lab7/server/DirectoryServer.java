@@ -1,6 +1,8 @@
 package llm.lab7.server;
 
+
+
 public class DirectoryServer {
  
-	MainDirectory md = new MainDirectory();
+	public MainDirectory md = new MainDirectory();
 }
