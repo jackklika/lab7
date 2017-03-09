@@ -38,7 +38,7 @@ public class MainDirectory implements Directory{
 		//if the list is sorted before it is given to us.
 		sort();
 	}
-	
+	 
 	//See employee class for comparator
 	public void sort(){
 		Collections.sort(list, Employee.NameComparator);

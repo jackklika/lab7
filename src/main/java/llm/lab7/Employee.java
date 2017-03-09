@@ -20,7 +20,7 @@ public class Employee {
 		String s = Phone.toString();
 		return s;
 	}
-
+ 
 	//Comparator to sort list items by last name
 	//based on example here http://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/
 	public static Comparator<Employee> NameComparator = new Comparator<Employee>(){
