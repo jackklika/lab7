@@ -3,7 +3,9 @@ package llm.lab7;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import llm.lab7.*;
 import llm.lab7.client.*;
+import llm.lab7.server.*;
 
 /**
  * Hello world!
@@ -16,7 +18,8 @@ public class App
     	boolean powerOn = true;
     	Scanner scan = new Scanner(System.in);
     	String cmd;
-    	DirectoryProxy dp = new DirectoryProxy();
+    	DirectoryServer ds = new DirectoryServer();
+    	DirectoryProxy dp = new DirectoryProxy(ds);
     	
     	
     	
@@ -72,10 +75,11 @@ public class App
     			
     		}
     		else if (cmd.equals("CLR")){
-    			// Clear the directory 
+    			ds.md = new MainDirectory(); // clear and set up new MainDirectory
     		}
     		else if (cmd.equals("PRINT")){
-    			// Print out the full directory employing toString implimented for Employee and Directory classes
+    			// Print out the full directory employing toString implemented for Employee and Directory classes
+    			ds.md.print();
     		}
     		else {
     			System.out.println("[INVALID COMMAND] Type POWER to quit.");
