@@ -33,7 +33,10 @@ public class MainDirectory implements Directory{
 		Gson gson = new Gson();
 		Type collectionType = new TypeToken<Collection<Employee>>(){}.getType();
 		this.add((Collection<Employee>) gson.fromJson(json, collectionType));
-		 
+		
+		//Not sure if this (and the sort method in general goes here or 
+		//if the list is sorted before it is given to us.
+		sort();
 	}
 	
 	//See employee class for comparator
