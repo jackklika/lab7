@@ -43,8 +43,11 @@ public class App
     					break; // get out of this while loop!
     				}
     				else {
+    					// Expect 'fname lname department phone'
     					
-    					// PARSE INPUT
+    					String[] in = subCmd.split(" ");
+    					
+    					Employee e = new Employee(in[0], in[1], in[2], Integer.parseInt(in[3]));
     					
     				}
     				

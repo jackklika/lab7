@@ -8,7 +8,7 @@ public class Employee {
 	String department;
 	Integer phone;
 
-	private Employee(String firstName, String lastName, String department, Integer phone) {
+	Employee(String firstName, String lastName, String department, Integer phone) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.department = department;
@@ -16,7 +16,9 @@ public class Employee {
 	}
 
 	public String toString() {
-		return String.format("%s %s %s %s", firstName, lastName, department, phone.toString());
+
+		String s = phone.toString();
+		return s;
 	}
  
 	//Comparator to sort list items by last name
