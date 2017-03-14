@@ -22,7 +22,7 @@ public class MainDirectory implements Directory {
 			System.out.println("<empty directory>");
 		} else {
 			for (Employee e : list) {
-				System.out.printf("%s, %s %s %s\n", e.lastName, e.firstName, e.department, e.phone);
+				System.out.printf("%s, %s %s %s\n", e.lastName, e.firstName, e.department, e.phoneNumber);
 			}
 		}
 	}
@@ -45,7 +45,7 @@ public class MainDirectory implements Directory {
 
 	// See employee class for comparator
 	public void sort() {
-		Collections.sort(list, Employee.NameComparator);
+		Collections.sort(list);
 
 	}
 
