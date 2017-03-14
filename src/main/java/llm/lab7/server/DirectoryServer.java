@@ -49,7 +49,7 @@ public class DirectoryServer {
 
             String response = "Begin of response\n";
 			Gson g = new Gson();
-			// set up the header
+			// set up the header	
             System.out.println(response);
 			try {
 				if (!sharedResponse.isEmpty()) {
