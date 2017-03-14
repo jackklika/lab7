@@ -27,7 +27,8 @@ public class DirectoryServer {
     static String sharedResponse = "";
     static boolean gotMessageFlag = false;
 
-    public static void main(String[] args) throws Exception {
+    @SuppressWarnings("restriction")
+	public static void main(String[] args) throws Exception {
 
         // set up a simple HTTP server on our local host
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
@@ -44,7 +45,8 @@ public class DirectoryServer {
         server.start();
     }
 
-    static class DisplayHandler implements HttpHandler {
+    @SuppressWarnings("restriction")
+	static class DisplayHandler implements HttpHandler {
         public void handle(HttpExchange t) throws IOException {
 
             String response = "Begin of response\n";
@@ -82,7 +84,8 @@ public class DirectoryServer {
         }
     }
 
-    static class PostHandler implements HttpHandler {
+    @SuppressWarnings("restriction")
+	static class PostHandler implements HttpHandler {
         public void handle(HttpExchange transmission) throws IOException {
 
             //  shared data that is used with other handlers
