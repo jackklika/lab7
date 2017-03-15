@@ -19,6 +19,7 @@ import com.sun.net.httpserver.HttpServer;
 
 
 
+@SuppressWarnings("restriction")
 public class DirectoryServer {
  
 	public MainDirectory md = new MainDirectory();
@@ -27,8 +28,7 @@ public class DirectoryServer {
     static String sharedResponse = "";
     static boolean gotMessageFlag = false;
 
-    @SuppressWarnings("restriction")
-	public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         // set up a simple HTTP server on our local host
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
@@ -45,8 +45,7 @@ public class DirectoryServer {
         server.start();
     }
 
-    @SuppressWarnings("restriction")
-	static class DisplayHandler implements HttpHandler {
+    static class DisplayHandler implements HttpHandler {
         public void handle(HttpExchange t) throws IOException {
 
             String response = "Begin of response\n";
@@ -84,8 +83,7 @@ public class DirectoryServer {
         }
     }
 
-    @SuppressWarnings("restriction")
-	static class PostHandler implements HttpHandler {
+    static class PostHandler implements HttpHandler {
         public void handle(HttpExchange transmission) throws IOException {
 
             //  shared data that is used with other handlers
