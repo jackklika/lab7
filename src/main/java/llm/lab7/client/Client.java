@@ -63,10 +63,10 @@ public class Client {
 	private static String getJSON() {
 
 		ArrayList<Employee> em = new ArrayList<Employee>();
-		em.add(new Employee("Eric", "Fritz", "Computer Science", "1"));
-		em.add(new Employee("Tanawat", "Khun", "Computer Science", "2"));
-		em.add(new Employee("Foo", "Bar", "Baz", "3"));
-		em.add(new Employee("Donald", "Duck", "Disney Animals", "4"));
+		em.add(new Employee("Eric", "Fritz", "Computer Science", "1", "Male", "Mr."));
+		em.add(new Employee("Tanawat", "Khun", "Computer Science", "2", "Male", "Mr."));
+		em.add(new Employee("Foo", "Bar", "Baz", "3", "Female", "Mrs."));
+		em.add(new Employee("Donald", "Duck", "Disney Animals", "4", "Male", "Dr."));
 		Gson g = new Gson();
 		String json = g.toJson(em);
 		return json;
