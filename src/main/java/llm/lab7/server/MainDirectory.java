@@ -26,6 +26,18 @@ public class MainDirectory implements Directory {
 			}
 		}
 	}
+	
+	public String toString(){
+		String out = "";
+		if (list.isEmpty()) {
+			out = "<empty directory>\n";
+		} else {
+			for (Employee e : list) {
+				out += String.format("%s, %s %s %s\n", e.lastName, e.firstName, e.department, e.phoneNumber);
+			}
+		}
+		return out;
+	}
 
 	public void clear() {
 		list.clear();

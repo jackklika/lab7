@@ -50,7 +50,7 @@ public class DirectoryServer {
     static class DisplayHandler implements HttpHandler {
         public void handle(HttpExchange t) throws IOException {
 
-            String response = "Begin of response\n";
+            String response = "List of Employees\n\n";
 			Gson g = new Gson();
 			// set up the header	
             System.out.println(response);
@@ -77,7 +77,7 @@ public class DirectoryServer {
 //				e.printStackTrace();
 //			}
             md.print();
-            response += "End of response\n";
+            response += md.toString();
             System.out.println(response);
             // write out the response
             t.sendResponseHeaders(200, response.length());
