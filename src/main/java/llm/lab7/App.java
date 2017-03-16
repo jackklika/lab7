@@ -44,7 +44,7 @@ public class App
     		else if (cmd.equals("ADD")){
     			
     			System.out.println("Please enter records in the following format:");
-    			System.out.println("Matt Powers CAFE 1921680112");
+    			System.out.println("Matt Powers CAFE 1921680112 Mr. Male");
     			System.out.println("Type 'END' when done.");
     			
     			String subCmd;
@@ -57,9 +57,9 @@ public class App
     				
     				if (subCmd.equals("END")){
     					break; // get out of this while loop!
-    				} else if (in.length == 4) {
+    				} else if (in.length == 6) {
     					try {
-							col.add(new Employee(in[0], in[1], in[2], in[3]));
+							col.add(new Employee(in[0], in[1], in[2], in[3], in[4], in[5]));
 							
     					} catch (Exception ex){
     						ex.printStackTrace();
