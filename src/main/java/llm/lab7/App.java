@@ -57,9 +57,9 @@ public class App
     				
     				if (subCmd.equals("END")){
     					break; // get out of this while loop!
-    				} else if (in.length == 4) {
+    				} else if (in.length == 6) {
     					try {
-							col.add(new Employee(in[0], in[1], in[2], in[3]));
+							col.add(new Employee(in[0], in[1], in[2], in[3], in[4], in[5]));
 							
     					} catch (Exception ex){
     						ex.printStackTrace();

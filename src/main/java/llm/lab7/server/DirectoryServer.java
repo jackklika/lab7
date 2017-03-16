@@ -21,6 +21,8 @@ import com.sun.net.httpserver.HttpServer;
 
 @SuppressWarnings("restriction")
 public class DirectoryServer {
+	
+	public static ArrayList<Employee> jsonOut;
  
 	public MainDirectory md = new MainDirectory();
 	
@@ -69,6 +71,7 @@ public class DirectoryServer {
 					for (Employee e : fromJson) {
 						response += e + "\n";
 					}
+					jsonOut = fromJson;
 				}
 			} catch (JsonSyntaxException e) {
 				e.printStackTrace();
@@ -108,7 +111,7 @@ public class DirectoryServer {
             sharedResponse = sharedResponse+sb.toString();
 
             // respond to the POST with ROGER
-            String postResponse = "ROGER JSON RECEIVED";
+            String postResponse = "RECIEVED JSON " + sharedResponse;
 
             System.out.println("response: " + sharedResponse);
 
