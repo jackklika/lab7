@@ -44,7 +44,7 @@ public class App
     		else if (cmd.equals("ADD")){
     			
     			System.out.println("Please enter records in the following format:");
-    			System.out.println("Matt Powers CAFE 1921680112");
+    			System.out.println("Matt Powers CAFE 1921680112 Mr. Male");
     			System.out.println("Type 'END' when done.");
     			
     			String subCmd;
