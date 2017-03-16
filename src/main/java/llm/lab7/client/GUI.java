@@ -19,12 +19,7 @@ import llm.lab7.Employee;
 
 public class GUI extends JFrame {
 
-	private JLabel firstName;
-	private JLabel lastName;
-	private JLabel dept;
-	private JLabel phone;
-	private JLabel gender;
-	private JLabel title;
+	public Employee e;
 
 	public GUI() {
 		// setTitle("Lab 8");
@@ -71,23 +66,25 @@ public class GUI extends JFrame {
 		panel.add(other);
 		panel.add(new JLabel("Title: "));
 		panel.add(combo);
-  
+
 		int result = JOptionPane.showConfirmDialog(null, panel, "Lab 8", JOptionPane.OK_CANCEL_OPTION,
 				JOptionPane.PLAIN_MESSAGE);
 		if (result == JOptionPane.OK_OPTION) {
 			if (male.isSelected()) {
-				Employee e1 = new Employee(firstName.getText(), lastName.getText(), department.getText(),
-						phone.getText(), combo.getSelectedItem().toString(), "Male");
-				System.out.println(e1);
+				e = new Employee(firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
+						combo.getSelectedItem().toString(), "Male");
+				System.out.println(e);
 			} else if (female.isSelected()) {
-				Employee e1 = new Employee(firstName.getText(), lastName.getText(), department.getText(),
-						phone.getText(), combo.getSelectedItem().toString(), "Female");
-				System.out.println(e1);
+				e = new Employee(firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
+						combo.getSelectedItem().toString(), "Female");
+				System.out.println(e);
 			} else {
-				Employee e1 = new Employee(firstName.getText(), lastName.getText(), department.getText(),
-						phone.getText(), combo.getSelectedItem().toString(), "Other");
-				System.out.println(e1);
+				e = new Employee(firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
+						combo.getSelectedItem().toString(), "Other");
+				System.out.println(e);
 			}
+			
+			
 
 		} else {
 			System.out.println("Cancelled");
