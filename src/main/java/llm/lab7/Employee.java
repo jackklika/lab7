@@ -7,17 +7,21 @@ public class Employee implements Comparable<Object>{
 	public String lastName;
 	public String department;
 	public String phoneNumber;
+	public String gender;
+	public String title;
 	
-	public Employee(String firstName, String lastName, String department, String phoneNum) {
+	public Employee(String firstName, String lastName, String department, String phoneNum, String title, String gender) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.department = department;
 		this.phoneNumber = phoneNum;
+		this.gender = gender;
+		this.title = title;
 	}
 	
 	@Override
 	public String toString() {
-		return firstName + " " + lastName + " \tin " + department + " \thas phone number of " + phoneNumber;
+		return firstName + " " + lastName + " \nDepartment: " + department + " \nPhone Number: " + phoneNumber + " \nGender: " + gender + " \nTitle " + title;
 	}
 
 	public int compareTo(Object o) {
