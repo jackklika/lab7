@@ -71,7 +71,7 @@ public class GUI extends JFrame {
 		panel.add(other);
 		panel.add(new JLabel("Title: "));
 		panel.add(combo);
-
+  
 		int result = JOptionPane.showConfirmDialog(null, panel, "Lab 8", JOptionPane.OK_CANCEL_OPTION,
 				JOptionPane.PLAIN_MESSAGE);
 		if (result == JOptionPane.OK_OPTION) {
