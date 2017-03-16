@@ -58,7 +58,7 @@ public class Client {
 			e.printStackTrace();
 		}
 	}   
-
+//
 	private static String getJSON() {
 
 		ArrayList<Employee> em = new ArrayList<Employee>();
