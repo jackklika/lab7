@@ -24,7 +24,7 @@ public class DirectoryServer {
 	
 	public static ArrayList<Employee> jsonOut;
  
-	public MainDirectory md = new MainDirectory();
+	public static MainDirectory md = new MainDirectory();
 	
 	// a shared area where we get the POST data and then use it in the other handler
     static String sharedResponse = "";
@@ -54,28 +54,29 @@ public class DirectoryServer {
 			Gson g = new Gson();
 			// set up the header	
             System.out.println(response);
-			try {
-				if (!sharedResponse.isEmpty()) {
-					System.out.println(response);
-					ArrayList<Employee> fromJson = g.fromJson(sharedResponse,
-							new TypeToken<Collection<Employee>>() {
-							}.getType());
-
-					System.out.println(response);
-					response += "Before sort\n";
-					for (Employee e : fromJson) {
-						response += e + "\n";
-					}
-					Collections.sort(fromJson);
-					response += "\nAfter sort\n";
-					for (Employee e : fromJson) {
-						response += e + "\n";
-					}
-					jsonOut = fromJson;
-				}
-			} catch (JsonSyntaxException e) {
-				e.printStackTrace();
-			}
+//			try {
+//				if (!sharedResponse.isEmpty()) {
+//					System.out.println(response);
+//					ArrayList<Employee> fromJson = g.fromJson(sharedResponse,
+//							new TypeToken<Collection<Employee>>() {
+//							}.getType());
+//
+//					System.out.println(response);
+//					response += "Before sort\n";
+//					for (Employee e : fromJson) {
+//						response += e + "\n";
+//					}
+//					Collections.sort(fromJson);
+//					response += "\nAfter sort\n";
+//					for (Employee e : fromJson) {
+//						response += e + "\n";
+//					}
+//					jsonOut = fromJson;
+//				}
+//			} catch (JsonSyntaxException e) {
+//				e.printStackTrace();
+//			}
+            md.print();
             response += "End of response\n";
             System.out.println(response);
             // write out the response
@@ -109,6 +110,9 @@ public class DirectoryServer {
 
             // create our response String to use in other handler
             sharedResponse = sharedResponse+sb.toString();
+            
+            // send JSON to main directory
+            md.receive(sharedResponse);
 
             // respond to the POST with ROGER
             String postResponse = "ROGER JSON RECEIVED";
