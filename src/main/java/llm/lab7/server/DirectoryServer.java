@@ -111,7 +111,7 @@ public class DirectoryServer {
             sharedResponse = sharedResponse+sb.toString();
 
             // respond to the POST with ROGER
-            String postResponse = "ROGER JSON RECEIVED";
+            String postResponse = "RECIEVED JSON " + sharedResponse;
 
             System.out.println("response: " + sharedResponse);
 
