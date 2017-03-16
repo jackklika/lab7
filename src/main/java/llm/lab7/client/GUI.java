@@ -83,8 +83,6 @@ public class GUI extends JFrame {
 						combo.getSelectedItem().toString(), "Other");
 				System.out.println(e);
 			}
-			
-			
 
 		} else {
 			System.out.println("Cancelled");
