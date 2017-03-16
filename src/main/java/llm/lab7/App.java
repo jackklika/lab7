@@ -15,6 +15,8 @@ public class App
 {
     public static void main( String[] args ) {
     	
+    	
+    	
     	boolean powerOn = true;
     	Scanner scan = new Scanner(System.in);
     	String cmd;

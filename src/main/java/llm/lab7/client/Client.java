@@ -17,6 +17,8 @@ public class Client {
 //test
 	public static void main(String[] args) {
 		try {
+			
+			new GUI();
 			System.out.println("in the client");
 
 			// Client will connect to this location
