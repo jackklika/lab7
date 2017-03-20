@@ -18,21 +18,19 @@ import javax.swing.JTextField;
 import llm.lab7.Employee;
 
 public class GUI extends JFrame {
-
+	
 	public Employee e;
-
 	public GUI() {
-		// setTitle("Lab 8");
-		// setResizable(false);
-		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// setVisible(true);
-		// setSize(600,600);
+		setTitle("Lab 8");
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		 setVisible(true);
+		setSize(600,600);
 		createContents();
 
 	}
-
 	private void createContents() {
-
+			
 		String[] items = { "Mr.", "Ms.", "Mrs.", "Dr.", "Col.", "Prof" };
 		JComboBox combo = new JComboBox(items);
 
@@ -88,5 +86,5 @@ public class GUI extends JFrame {
 			System.out.println("Cancelled");
 		}
 	}
+	}
 
-}
