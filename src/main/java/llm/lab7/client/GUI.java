@@ -69,16 +69,16 @@ public class GUI extends JFrame {
 				JOptionPane.PLAIN_MESSAGE);
 		if (result == JOptionPane.OK_OPTION) {
 			if (male.isSelected()) {
-				e = new Employee(firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
-						combo.getSelectedItem().toString(), "Male");
+				e = new Employee(combo.getSelectedItem().toString(), firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
+						"Male");
 				System.out.println(e);
 			} else if (female.isSelected()) {
-				e = new Employee(firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
-						combo.getSelectedItem().toString(), "Female");
+				e = new Employee(combo.getSelectedItem().toString(), firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
+						"Female");
 				System.out.println(e);
 			} else {
-				e = new Employee(firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
-						combo.getSelectedItem().toString(), "Other");
+				e = new Employee(combo.getSelectedItem().toString(), firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
+						"Other");
 				System.out.println(e);
 			}
 

@@ -10,7 +10,7 @@ public class Employee implements Comparable<Object>{
 	public String gender;
 	public String title;
 	
-	public Employee(String firstName, String lastName, String department, String phoneNum, String title, String gender) {
+	public Employee(String title, String firstName, String lastName, String department, String phoneNum, String gender) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.department = department;
