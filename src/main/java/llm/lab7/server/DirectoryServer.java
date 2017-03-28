@@ -96,6 +96,7 @@ public class DirectoryServer {
 //			}
             //md.print();
             //response += md.toString();
+            response += md.toTableRow();
             response += "</table>\n</body>\n</html>\n";
             System.out.println(response);
             // write out the response
@@ -180,7 +181,7 @@ public class DirectoryServer {
 
         private File getFile(String fileId) {
             // TODO retrieve the file associated with the id
-        	String r = ".";
+        	String r = "src/main/java/llm/lab7/server";
         	r += fileId;
         	System.out.println(r);
         	File f = new File(r);
