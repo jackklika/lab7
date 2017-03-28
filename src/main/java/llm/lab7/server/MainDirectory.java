@@ -38,6 +38,11 @@ public class MainDirectory implements Directory {
 		}
 		return out;
 	}
+	
+	public String toTableRow(){
+		String out = "";
+		return out;
+	}
 
 	public void clear() {
 		list.clear();

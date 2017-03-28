@@ -3,6 +3,8 @@ package llm.lab7.server;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -49,8 +51,10 @@ public class DirectoryServer {
 
     static class DisplayHandler implements HttpHandler {
         public void handle(HttpExchange t) throws IOException {
-
-            String response = "List of Employees\n\n";
+        	String encoding = "UTF-8";
+            t.getResponseHeaders().set("Content-Type", "text/html; charset=" + encoding);
+            
+            String response = "<h1>List of Employees</h1>\n\n";
 			Gson g = new Gson();
 			// set up the header	
             System.out.println(response);
@@ -76,13 +80,13 @@ public class DirectoryServer {
 //			} catch (JsonSyntaxException e) {
 //				e.printStackTrace();
 //			}
-            md.print();
-            response += md.toString();
+            //md.print();
+            //response += md.toString();
             System.out.println(response);
             // write out the response
             t.sendResponseHeaders(200, response.length());
-            OutputStream os = t.getResponseBody();
-            os.write(response.getBytes());
+            Writer os = new OutputStreamWriter(t.getResponseBody(), encoding);
+            os.write(response);
             os.close();
         }
     }
