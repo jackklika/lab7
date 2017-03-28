@@ -21,11 +21,11 @@ public class GUI extends JFrame {
 	
 	public Employee e;
 	public GUI() {
-		setTitle("Lab 8");
-		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		 setVisible(true);
-		setSize(600,600);
+//		setTitle("Lab 8");
+//		setResizable(false);
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		 setVisible(true);
+//		setSize(600,600);
 		createContents();
 
 	}
