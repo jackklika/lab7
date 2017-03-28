@@ -41,6 +41,7 @@ public class MainDirectory implements Directory {
 	
 	public String toTableRow(){
 		String out = "";
+		String hi= "";
 		for (Employee e : list) {
 			out += "<tr><td>"+ e.title + "</td><td>"+ e.firstName + "</td><td>" + e.lastName + "</td><td>" + e.department + "</td><td>" + e.phoneNumber + "</td><td>" + e.gender + "</td></tr>" ;
 		}
