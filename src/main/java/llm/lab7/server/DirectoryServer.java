@@ -1,5 +1,7 @@
 package llm.lab7.server;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -42,6 +44,9 @@ public class DirectoryServer {
 
         // create a context to get the request for the POST
         server.createContext("/sendresults",new PostHandler());
+        
+        server.createContext("/style.css", new StaticFileServer());
+        
         server.setExecutor(null); // creates a default executor
 
         // get it going
@@ -53,9 +58,18 @@ public class DirectoryServer {
         public void handle(HttpExchange t) throws IOException {
         	String encoding = "UTF-8";
             t.getResponseHeaders().set("Content-Type", "text/html; charset=" + encoding);
-            
-            String response = "<h1>List of Employees</h1>\n\n";
-			Gson g = new Gson();
+            String response = "<!DOCTYPE html>\n<html>\n";
+            response += "<head><link rel =\"stylesheet\" type = \"text/css\" href = \"/style.css\"></head>\n";
+            //response += "<h1>List of Employees</h1>\n"; // title
+            response += "<body>\n<table>\n<tr>\n";
+            response += "<th>Title</th>\n";
+            response += "<th>First Name</th>\n";
+            response += "<th>Last Name</th>\n";
+            response += "<th>Department</th>\n";
+            response += "<th>Phone</th>\n";
+            response += "<th>Gender</th>\n";
+            response += "</tr>\n";
+			//Gson g = new Gson();
 			// set up the header	
             System.out.println(response);
 //			try {
@@ -82,6 +96,8 @@ public class DirectoryServer {
 //			}
             //md.print();
             //response += md.toString();
+            response += md.toTableRow();
+            response += "</table>\n</body>\n</html>\n";
             System.out.println(response);
             // write out the response
             t.sendResponseHeaders(200, response.length());
@@ -133,6 +149,43 @@ public class DirectoryServer {
             outputStream.write(postResponse.getBytes());
 
             outputStream.close();
+        }
+    }
+    
+    static class StaticFileServer implements HttpHandler {
+
+        public void handle(HttpExchange exchange) throws IOException {
+            String fileId = exchange.getRequestURI().getPath();
+            File file = getFile(fileId);
+            if (file == null) {
+                String response = "Error 404 File not found.";
+                exchange.sendResponseHeaders(404, response.length());
+                OutputStream output = exchange.getResponseBody();
+                output.write(response.getBytes());
+                output.flush();
+                output.close();
+            } else {
+                exchange.sendResponseHeaders(200, 0);
+                OutputStream output = exchange.getResponseBody();
+                FileInputStream fs = new FileInputStream(file);
+                final byte[] buffer = new byte[0x10000];
+                int count = 0;
+                while ((count = fs.read(buffer)) >= 0) {
+                    output.write(buffer, 0, count);
+                }
+                output.flush();
+                output.close();
+                fs.close();
+            }
+        }
+
+        private File getFile(String fileId) {
+            // TODO retrieve the file associated with the id
+        	String r = "src/main/java/llm/lab7/server";
+        	r += fileId;
+        	System.out.println(r);
+        	File f = new File(r);
+            return f;
         }
     }
 }
