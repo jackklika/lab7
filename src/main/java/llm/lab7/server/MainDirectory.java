@@ -42,6 +42,7 @@ public class MainDirectory implements Directory {
 	public String toTableRow(){
 		String out = "";
 		String hi= "";
+		list.sort(null);
 		for (Racer e : list) {
 			out += "<tr><td>"+ e.bib + "</td><td>"+ e.firstInitial + "</td><td>" + e.lastName + "</td><td>" + e.time + "</td></tr>" ;
 		}

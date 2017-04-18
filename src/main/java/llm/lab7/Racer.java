@@ -24,39 +24,44 @@ public class Racer implements Comparable<Object>{
 	public int compareTo(Object o) {
 		if (o instanceof Racer) {
 			Racer other = (Racer) o;
-			if(other.time.equals("DNF")) return -1; // Less than others
+			if(this.time.equals("DNF")) return 1; // Less than others
 			
 			
-			String[] ttimes = this.time.split(":");
-			int thours = Integer.parseInt(ttimes[0]);
-			int tminutes = Integer.parseInt(ttimes[1]);
-			double tseconds = Integer.parseInt(ttimes[2]);
-			
-			String[] otimes = other.time.split(":");
-			int ohours = Integer.parseInt(otimes[0]);
-			int ominutes = Integer.parseInt(otimes[1]);
-			double oseconds = Integer.parseInt(otimes[2]);
-			
-			
-			if (thours > ohours){
-				return 1;
-			} else if (thours < ohours){
-				return -1;
-			} else {
-				if (tminutes > ominutes){
+			try {
+				String[] ttimes = this.time.split(":");
+				int thours = Integer.parseInt(ttimes[0]);
+				int tminutes = Integer.parseInt(ttimes[1]);
+				double tseconds = Integer.parseInt(ttimes[2]);
+				
+				String[] otimes = other.time.split(":");
+				int ohours = Integer.parseInt(otimes[0]);
+				int ominutes = Integer.parseInt(otimes[1]);
+				double oseconds = Integer.parseInt(otimes[2]);
+				
+				
+				if (thours > ohours){
 					return 1;
-				} else if (tminutes < tminutes){
+				} else if (thours < ohours){
 					return -1;
 				} else {
-					if (tseconds > oseconds){
+					if (tminutes > ominutes){
 						return 1;
-					} else if (tseconds < oseconds){
+					} else if (tminutes < tminutes){
 						return -1;
 					} else {
-						return 0;
+						if (tseconds > oseconds){
+							return 1;
+						} else if (tseconds < oseconds){
+							return -1;
+						} else {
+							return 0;
+						}
 					}
 				}
+			} catch(NumberFormatException e) {
+				e.printStackTrace();
 			}
+			
 			
 			//return time.compareTo(other.time);
 		}
