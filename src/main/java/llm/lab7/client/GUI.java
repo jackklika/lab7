@@ -19,7 +19,7 @@ import llm.lab7.Racer;
 
 public class GUI extends JFrame {
 
-	public Racer e;
+	public Racer r;
 
 	public GUI() {
 
@@ -34,8 +34,8 @@ public class GUI extends JFrame {
 
 		JTextField firstInitial = new JTextField("");
 		JTextField lastName = new JTextField("");
-		JTextField BibNumber = new JTextField("");
-		JTextField Time = new JTextField("");
+		JTextField bibNumber = new JTextField("");
+		JTextField time = new JTextField("");
 
 		JPanel panel = new JPanel(new GridLayout(0, 1));
 
@@ -44,19 +44,17 @@ public class GUI extends JFrame {
 		panel.add(new JLabel("Last Name:"));
 		panel.add(lastName);
 		panel.add(new JLabel("Bib Number:"));
-		panel.add(BibNumber);
+		panel.add(bibNumber);
 		panel.add(new JLabel("Time:"));
-		panel.add(Time);
+		panel.add(time);
 
 		int result = JOptionPane.showConfirmDialog(null, panel, "Lab 8",
 				JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 		if (result == JOptionPane.OK_OPTION) {
 			// TODO Create the appropriate object
-			// e = new Employee(combo.getSelectedItem().toString(),
-			// firstInitial.getText(), lastName.getText(), BibNumber.getText(),
-			// Time.getText(),
-			// "Other");
-			// System.out.println(e);
+			r = new Racer(bibNumber.getText(), lastName.getText(),
+					firstInitial.getText(), time.getText());
+			System.out.println(r);
 
 		} else {
 			System.out.println("Cancelled");
