@@ -29,9 +29,7 @@ public class GUI extends JFrame {
 
 	private void createContents() {
 
-		String[] items = { "Mr.", "Ms.", "Mrs.", "Dr.", "Col.", "Prof" };
-		JComboBox combo = new JComboBox(items);
-
+	
 		JTextField firstInitial = new JTextField("");
 		JTextField lastName = new JTextField("");
 		JTextField bibNumber = new JTextField("");
@@ -48,12 +46,13 @@ public class GUI extends JFrame {
 		panel.add(new JLabel("Time:"));
 		panel.add(time);
 
-		int result = JOptionPane.showConfirmDialog(null, panel, "Lab 8",
+		int result = JOptionPane.showConfirmDialog(null, panel, "Lab 12",
 				JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 		if (result == JOptionPane.OK_OPTION) {
+		String initial = firstInitial.getText().substring(0, 1);
 			// TODO Create the appropriate object
 			r = new Racer(bibNumber.getText(), lastName.getText(),
-					firstInitial.getText(), time.getText());
+					initial, time.getText());
 			System.out.println(r);
 
 		} else {
