@@ -15,11 +15,11 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import llm.lab7.Employee;
+import llm.lab7.Racer;
 
 public class GUI extends JFrame {
 
-	public Employee e;
+	public Racer e;
 
 	public GUI() {
 
