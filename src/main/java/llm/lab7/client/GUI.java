@@ -30,7 +30,7 @@ import llm.lab7.Racer;
 
 public class GUI extends JFrame {
 
-	public Racer r;
+	//public Racer r;
 	public File racers;
 	public ArrayList<Racer> rl = new ArrayList<Racer>();
 	
@@ -95,9 +95,11 @@ public class GUI extends JFrame {
 				}
 			}
 			else {
-				r = new Racer(bibNumber.getText(), lastName.getText(),
-						firstInitial.getText(), time.getText());
-				System.out.println(r);
+				rl.add(new Racer(bibNumber.getText(), lastName.getText(),
+						firstInitial.getText(), time.getText()));
+				for (Racer racer : rl) {
+					System.out.println(racer);
+				}
 			}
 
 		} else {
