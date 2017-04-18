@@ -18,73 +18,48 @@ import javax.swing.JTextField;
 import llm.lab7.Employee;
 
 public class GUI extends JFrame {
-	
+
 	public Employee e;
+
 	public GUI() {
-//		setTitle("Lab 8");
-//		setResizable(false);
-//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		 setVisible(true);
-//		setSize(600,600);
+
 		createContents();
 
 	}
+
 	private void createContents() {
-			
+
 		String[] items = { "Mr.", "Ms.", "Mrs.", "Dr.", "Col.", "Prof" };
 		JComboBox combo = new JComboBox(items);
 
-		JTextField firstName = new JTextField("");
+		JTextField firstInitial = new JTextField("");
 		JTextField lastName = new JTextField("");
-		JTextField department = new JTextField("");
-		JTextField phone = new JTextField("");
-
-		JRadioButton male = new JRadioButton("Male");
-		male.setSelected(true);
-		JRadioButton female = new JRadioButton("Female");
-		JRadioButton other = new JRadioButton("Other");
-		ButtonGroup group = new ButtonGroup();
-		group.add(male);
-		group.add(female);
-		group.add(other);
+		JTextField BibNumber = new JTextField("");
+		JTextField Time = new JTextField("");
 
 		JPanel panel = new JPanel(new GridLayout(0, 1));
 
-		panel.add(new JLabel("First Name: "));
-		panel.add(firstName);
+		panel.add(new JLabel("First Initial: "));
+		panel.add(firstInitial);
 		panel.add(new JLabel("Last Name:"));
 		panel.add(lastName);
-		panel.add(new JLabel("Department:"));
-		panel.add(department);
-		panel.add(new JLabel("Phone Number:"));
-		panel.add(phone);
-		panel.add(new JLabel("Gender:"));
-		panel.add(male);
-		panel.add(female);
-		panel.add(other);
-		panel.add(new JLabel("Title: "));
-		panel.add(combo);
+		panel.add(new JLabel("Bib Number:"));
+		panel.add(BibNumber);
+		panel.add(new JLabel("Time:"));
+		panel.add(Time);
 
-		int result = JOptionPane.showConfirmDialog(null, panel, "Lab 8", JOptionPane.OK_CANCEL_OPTION,
-				JOptionPane.PLAIN_MESSAGE);
+		int result = JOptionPane.showConfirmDialog(null, panel, "Lab 8",
+				JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 		if (result == JOptionPane.OK_OPTION) {
-			if (male.isSelected()) {
-				e = new Employee(combo.getSelectedItem().toString(), firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
-						"Male");
-				System.out.println(e);
-			} else if (female.isSelected()) {
-				e = new Employee(combo.getSelectedItem().toString(), firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
-						"Female");
-				System.out.println(e);
-			} else {
-				e = new Employee(combo.getSelectedItem().toString(), firstName.getText(), lastName.getText(), department.getText(), phone.getText(),
-						"Other");
-				System.out.println(e);
-			}
+			// TODO Create the appropriate object
+			// e = new Employee(combo.getSelectedItem().toString(),
+			// firstInitial.getText(), lastName.getText(), BibNumber.getText(),
+			// Time.getText(),
+			// "Other");
+			// System.out.println(e);
 
 		} else {
 			System.out.println("Cancelled");
 		}
 	}
-	}
-
+}
