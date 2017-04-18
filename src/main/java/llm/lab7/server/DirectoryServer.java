@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-import llm.lab7.Employee;
+import llm.lab7.Racer;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -26,7 +26,7 @@ import com.sun.net.httpserver.HttpServer;
 @SuppressWarnings("restriction")
 public class DirectoryServer {
 	
-	public static ArrayList<Employee> jsonOut;
+	public static ArrayList<Racer> jsonOut;
  
 	public static MainDirectory md = new MainDirectory();
 	

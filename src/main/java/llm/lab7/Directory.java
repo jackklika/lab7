@@ -5,7 +5,7 @@ import java.util.Collection;
 
 public interface Directory {
 	
-	public void add(Collection<Employee> e);
+	public void add(Collection<Racer> e);
 	
 	public void print();
 	

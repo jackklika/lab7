@@ -6,18 +6,18 @@ import java.util.Collection;
 import com.google.gson.Gson;
 
 import llm.lab7.Directory;
-import llm.lab7.Employee;
+import llm.lab7.Racer;
 import llm.lab7.server.DirectoryServer;
 
 public class DirectoryProxy implements Directory{
-private ArrayList<Employee> list = new ArrayList<Employee>();
+private ArrayList<Racer> list = new ArrayList<Racer>();
 private DirectoryServer ds = new DirectoryServer();
 
 	public DirectoryProxy(DirectoryServer d) {
 		this.ds = d;
 	}
 
-	public void add(Collection<Employee> e) {
+	public void add(Collection<Racer> e) {
 		if(!list.contains(e)){
 			list.addAll(e);
 		}
@@ -34,7 +34,7 @@ private DirectoryServer ds = new DirectoryServer();
 	
 
 	public void print() {
-		for (Employee tmp: list) {
+		for (Racer tmp: list) {
 	        System.out.println(tmp);
 	    }
 	}

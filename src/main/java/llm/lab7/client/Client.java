@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
 
-import llm.lab7.Employee;
+import llm.lab7.Racer;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -61,11 +61,8 @@ public class Client {
 //
 	private static String getJSON() {
 
-		ArrayList<Employee> em = new ArrayList<Employee>();
-		em.add(new Employee("Mr.", "Eric", "Fritz", "Computer Science", "1124152265", "Male"));
-		em.add(new Employee("Dr.", "Tanawat", "Khun", "Computer Science", "2416834957", "Male"));
-		em.add(new Employee("Mrs.", "Foo", "Bar", "Baz", "5338472834", "Female"));
-		em.add(new Employee("Mr.", "Donald", "Duck", "Disney Animals", "1249374826", "Male"));
+		ArrayList<Racer> em = new ArrayList<Racer>();
+		em.add(new Racer("300", "Klika", "J", "4:30"));
 		em.add(new GUI().e);
 		Gson g = new Gson();
 		String json = g.toJson(em);

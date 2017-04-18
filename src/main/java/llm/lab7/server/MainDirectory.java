@@ -8,12 +8,12 @@ import com.google.gson.internal.$Gson$Types;
 import java.lang.reflect.Type;
 
 import llm.lab7.Directory;
-import llm.lab7.Employee;
+import llm.lab7.Racer;
 
 public class MainDirectory implements Directory {
-	private ArrayList<Employee> list = new ArrayList<Employee>();
+	private ArrayList<Racer> list = new ArrayList<Racer>();
 
-	public void add(Collection<Employee> e) {
+	public void add(Collection<Racer> e) {
 		this.list.addAll(e);
 	}
 
@@ -21,8 +21,8 @@ public class MainDirectory implements Directory {
 		if (list.isEmpty()) {
 			System.out.println("<empty directory>");
 		} else {
-			for (Employee e : list) {
-				System.out.printf("%s, %s %s %s\n", e.lastName, e.firstName, e.department, e.phoneNumber);
+			for (Racer e : list) {
+				System.out.printf("%s, %s %s %s\n", e.bib, e.firstInitial, e.lastName, e.time);
 			}
 		}
 	}
@@ -32,8 +32,8 @@ public class MainDirectory implements Directory {
 		if (list.isEmpty()) {
 			out = "<empty directory>\n";
 		} else {
-			for (Employee e : list) {
-				out += String.format("%s, %s %s %s\n", e.lastName, e.firstName, e.department, e.phoneNumber);
+			for (Racer e : list) {
+				out += String.format("%s, %s %s %s\n", e.bib, e.firstInitial, e.lastName, e.time);
 			}
 		}
 		return out;
@@ -42,8 +42,8 @@ public class MainDirectory implements Directory {
 	public String toTableRow(){
 		String out = "";
 		String hi= "";
-		for (Employee e : list) {
-			out += "<tr><td>"+ e.title + "</td><td>"+ e.firstName + "</td><td>" + e.lastName + "</td><td>" + e.department + "</td><td>" + e.phoneNumber + "</td><td>" + e.gender + "</td></tr>" ;
+		for (Racer e : list) {
+			out += "<tr><td>"+ e.bib + "</td><td>"+ e.firstInitial + "</td><td>" + e.lastName + "</td><td>" + e.time + "</td></tr>" ;
 		}
 		
 		return out;
@@ -56,9 +56,9 @@ public class MainDirectory implements Directory {
 	@SuppressWarnings("unchecked")
 	public void receive(String json) {
 		Gson gson = new Gson();
-		Type collectionType = new TypeToken<Collection<Employee>>() {
+		Type collectionType = new TypeToken<Collection<Racer>>() {
 		}.getType();
-		this.add((Collection<Employee>) gson.fromJson(json, collectionType));
+		this.add((Collection<Racer>) gson.fromJson(json, collectionType));
 
 		// Not sure if this (and the sort method in general goes here or
 		// if the list is sorted before it is given to us.

@@ -49,7 +49,7 @@ public class App
     			
     			String subCmd;
     			subCmd = scan.nextLine().toUpperCase();
-    			ArrayList<Employee> col = new ArrayList<Employee>();
+    			ArrayList<Racer> col = new ArrayList<Racer>();
     			while (true){
     				
     				subCmd = scan.nextLine().toUpperCase();
@@ -59,7 +59,7 @@ public class App
     					break; // get out of this while loop!
     				} else if (in.length == 6) {
     					try {
-							col.add(new Employee(in[0], in[1], in[2], in[3], in[4], in[5]));
+							col.add(new Racer(in[0], in[1], in[2], in[3]));
 							
     					} catch (Exception ex){
     						ex.printStackTrace();
