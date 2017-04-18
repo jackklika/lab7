@@ -62,12 +62,10 @@ public class DirectoryServer {
             response += "<head><link rel =\"stylesheet\" type = \"text/css\" href = \"/style.css\"></head>\n";
             //response += "<h1>List of Employees</h1>\n"; // title
             response += "<body>\n<table>\n<tr>\n";
-            response += "<th>Title</th>\n";
-            response += "<th>First Name</th>\n";
+            response += "<th>Bib#</th>\n"; 
+            response += "<th>First Initial</th>\n";
             response += "<th>Last Name</th>\n";
-            response += "<th>Department</th>\n";
-            response += "<th>Phone</th>\n";
-            response += "<th>Gender</th>\n";
+            response += "<th>Time</th>\n";
             response += "</tr>\n";
 			//Gson g = new Gson();
 			// set up the header	
