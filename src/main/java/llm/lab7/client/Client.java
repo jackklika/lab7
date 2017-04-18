@@ -62,7 +62,11 @@ public class Client {
 	private static String getJSON() {
 
 		ArrayList<Racer> em = new ArrayList<Racer>();
-		em.add(new Racer("300", "Klika", "J", "4:30:44.3"));
+		em.add(new Racer("1", "Klika", "J", "0:59:59.59"));
+		em.add(new Racer("2", "Kalka", "F", "2:11:22.2"));
+		em.add(new Racer("3", "Smith", "S", "1:00:00.31"));
+		em.add(new Racer("4", "Katz", "S", "DNF"));
+		em.add(new Racer("5", "Lewis", "T", "3:44:33.1"));
 		em.add(new GUI().r);
 		Gson g = new Gson();
 		String json = g.toJson(em);
