@@ -1,9 +1,15 @@
 Lab 12 Contributions
 
-Kaitlyn: Updated the GUI to handle a racer and create a racer object from the GUI. Helped Jack with updating the compareTo method in the Racer class.
+Kaitlyn:
+- Updated the GUI to handle a racer and create a racer object from the GUI.
+- Helped Jack with updating the compareTo method in the Racer class.
 
-Jack: Changed employee class to racer, updated the compareTo method in Racer class to sort by race time. 
+Jack:
+- Changed employee class to racer
+- Updated the compareTo method in Racer class to sort by race time & DNF. 
 
-David:  Added capability to read a file to create racers.
+David:
+- Added capability to read a file to create racers.
 
-John: Updated the html formatting from handling employees to racers.
+John:
+- Updated the html table header fields to handle racers, not employees.
