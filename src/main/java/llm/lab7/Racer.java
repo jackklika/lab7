@@ -26,17 +26,16 @@ public class Racer implements Comparable<Object>{
 			Racer other = (Racer) o;
 			if(this.time.equals("DNF")) return 1; // Less than others
 			
-			
 			try {
 				String[] ttimes = this.time.split(":");
 				int thours = Integer.parseInt(ttimes[0]);
 				int tminutes = Integer.parseInt(ttimes[1]);
-				double tseconds = Integer.parseInt(ttimes[2]);
+				double tseconds = Double.parseDouble(ttimes[2]);
 				
 				String[] otimes = other.time.split(":");
 				int ohours = Integer.parseInt(otimes[0]);
 				int ominutes = Integer.parseInt(otimes[1]);
-				double oseconds = Integer.parseInt(otimes[2]);
+				double oseconds = Double.parseDouble(otimes[2]);
 				
 				
 				if (thours > ohours){
