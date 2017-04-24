@@ -7,9 +7,10 @@ Kaitlyn:
 Jack:
 - Changed employee class to racer
 - Updated the compareTo method in Racer class to sort by race time & DNF. 
+- Submitted files
 
 David:
-- Added capability to read a file to create racers.
+- Added capability to read a file to create racers in GUI
 
 John:
 - Updated the html table header fields to handle racers, not employees.
