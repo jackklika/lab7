@@ -22,7 +22,7 @@ public class MainDirectory implements Directory {
 			System.out.println("<empty directory>");
 		} else {
 			for (Racer e : list) {
-				System.out.printf("%s, %s %s %s\n", e.bib, e.firstInitial, e.lastName, e.time);
+				System.out.printf("%s, %s %s %s\n", e.place, e.bib, e.name, e.time);
 			}
 		}
 	}
@@ -33,7 +33,7 @@ public class MainDirectory implements Directory {
 			out = "<empty directory>\n";
 		} else {
 			for (Racer e : list) {
-				out += String.format("%s, %s %s %s\n", e.bib, e.firstInitial, e.lastName, e.time);
+				out += String.format("%s, %s %s %s\n", e.place, e.bib, e.name, e.time);
 			}
 		}
 		return out;
@@ -44,7 +44,7 @@ public class MainDirectory implements Directory {
 		String hi= "";
 		Collections.sort(list);
 		for (Racer e : list) {
-			out += "<tr><td>"+ e.bib + "</td><td>"+ e.firstInitial + "</td><td>" + e.lastName + "</td><td>" + e.time + "</td></tr>" ;
+			out += "<tr><td>"+ e.place + "</td><td>"+ e.bib + "</td><td>" + e.name + "</td><td>" + e.time + "</td></tr>" ;
 		}
 		
 		return out;

@@ -4,20 +4,20 @@ package llm.lab7;
 public class Racer implements Comparable<Object>{
 	
 	public String bib;
-	public String lastName;
-	public String firstInitial;
+	public String name;
+	public String place;
 	public String time;
 	
-	public Racer(String bib, String lastName, String firstInitial, String time) {
+	public Racer(String place, String bib, String name, String time) {
 		this.bib = bib;
-		this.lastName = lastName;
-		this.firstInitial = firstInitial;
+		this.name = name;
+		this.place = place;
 		this.time = time;
 	}
 	
 	@Override
 	public String toString() {
-		return String.format("#%s: %s. %s  [%s]", bib, firstInitial, lastName, time);
+		return String.format("#%s \tBib: %s  | %s  [%s]", place, bib, name, time);
 	}
 
 	//Sort racers by race result order (shortest to longest with all DNFs at the end)

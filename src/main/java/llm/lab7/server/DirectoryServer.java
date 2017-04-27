@@ -62,38 +62,14 @@ public class DirectoryServer {
             response += "<head><link rel =\"stylesheet\" type = \"text/css\" href = \"/style.css\"></head>\n";
             //response += "<h1>List of Employees</h1>\n"; // title
             response += "<body>\n<table>\n<tr>\n";
-            response += "<th>Bib#</th>\n"; 
-            response += "<th>First Initial</th>\n";
-            response += "<th>Last Name</th>\n";
+            response += "<th>Place</th>\n"; 
+            response += "<th>Bib Number</th>\n";
+            response += "<th>Name</th>\n";
             response += "<th>Time</th>\n";
             response += "</tr>\n";
 			//Gson g = new Gson();
 			// set up the header	
             System.out.println(response);
-//			try {
-//				if (!sharedResponse.isEmpty()) {
-//					System.out.println(response);
-//					ArrayList<Employee> fromJson = g.fromJson(sharedResponse,
-//							new TypeToken<Collection<Employee>>() {
-//							}.getType());
-//
-//					System.out.println(response);
-//					response += "Before sort\n";
-//					for (Employee e : fromJson) {
-//						response += e + "\n";
-//					}
-//					Collections.sort(fromJson);
-//					response += "\nAfter sort\n";
-//					for (Employee e : fromJson) {
-//						response += e + "\n";
-//					}
-//					jsonOut = fromJson;
-//				}
-//			} catch (JsonSyntaxException e) {
-//				e.printStackTrace();
-//			}
-            //md.print();
-            //response += md.toString();
             response += md.toTableRow();
             response += "</table>\n</body>\n</html>\n";
             System.out.println(response);
