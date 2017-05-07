@@ -84,6 +84,8 @@ public class DirectoryServer {
     static class PostHandler implements HttpHandler {
         public void handle(HttpExchange transmission) throws IOException {
 
+        	System.out.println(transmission);
+        	
             //  shared data that is used with other handlers
             sharedResponse = "";
 
@@ -118,6 +120,7 @@ public class DirectoryServer {
 
             // assume that stuff works all the time
             transmission.sendResponseHeaders(300, postResponse.length());
+        	System.out.println("1");
 
             // write it and return it
             outputStream.write(postResponse.getBytes());
